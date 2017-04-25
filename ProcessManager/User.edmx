@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TJZHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Gtestbiaodan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tbrq" Type="date" />
+          <Property Name="tbbm" Type="varchar" MaxLength="50" />
+          <Property Name="tbrgh" Type="varchar" MaxLength="20" />
+          <Property Name="cxrq" Type="date" />
+          <Property Name="ycgx" Type="varchar" MaxLength="50" />
+          <Property Name="zrbm" Type="varchar" MaxLength="50" />
+          <Property Name="btzr" Type="varchar" MaxLength="20" />
+          <Property Name="wlmc" Type="varchar" MaxLength="50" />
+          <Property Name="wlxh" Type="varchar" MaxLength="50" />
+          <Property Name="ph" Type="varchar" MaxLength="50" />
+          <Property Name="sb" Type="varchar" MaxLength="50" />
+          <Property Name="sbbh" Type="varchar" MaxLength="20" />
+          <Property Name="gsbgp" Type="varchar" MaxLength="20" />
+          <Property Name="zt" Type="varchar" MaxLength="100" />
+          <Property Name="ycfl" Type="varchar" MaxLength="20" />
+          <Property Name="ycms" Type="varchar" MaxLength="800" />
+          <Property Name="zrrgh" Type="varchar" MaxLength="20" />
+          <Property Name="gjc" Type="varchar" MaxLength="50" />
+          <Property Name="yyfx" Type="varchar" MaxLength="800" />
+          <Property Name="zgjg" Type="varchar" MaxLength="800" />
+          <Property Name="gsbg" Type="varchar" MaxLength="100" />
+          <Property Name="wcrq" Type="date" />
+          <Property Name="xgqr" Type="varchar" MaxLength="800" />
+          <Property Name="bdzt" Type="int" />
+          <Property Name="gbrq" Type="date" />
+          <Property Name="fouce" Type="int" />
+          <Property Name="zsjl" Type="int" />
+          <Property Name="zfrq" Type="date" />
+          <Property Name="xyrq" Type="date" />
+          <Property Name="gbzt" Type="int" />
+        </EntityType>
+        <EntityType Name="GtestUser">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="shuliang" Type="nvarchar" MaxLength="50" />
+          <Property Name="bumen" Type="nvarchar" MaxLength="50" />
+          <Property Name="tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="dengluma" Type="nvarchar" MaxLength="50" />
+          <Property Name="zhiwei" Type="nvarchar" MaxLength="50" />
+          <Property Name="userxm" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="YiChangCuLi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="yichangid" Type="varchar" MaxLength="50" />
+          <Property Name="yyfx" Type="varchar(max)" />
+          <Property Name="zgjg" Type="varchar(max)" />
+          <Property Name="xgqr" Type="varchar(max)" />
+          <Property Name="culitime" Type="datetime" />
+          <Property Name="querentime" Type="datetime" />
+          <Property Name="leixing" Type="varchar" MaxLength="10" />
+          <Property Name="flag" Type="varchar" MaxLength="10" />
+          <Property Name="culiren" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="YiChangFenLei">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="YiChangFuZeRen">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="zrbm" Type="varchar" MaxLength="20" />
+          <Property Name="fzrgh" Type="varchar" MaxLength="20" />
+          <Property Name="fzrxm" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="TJZHModelStoreContainer">
+          <EntitySet Name="Gtestbiaodan" EntityType="Self.Gtestbiaodan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GtestUser" EntityType="Self.GtestUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YiChangCuLi" EntityType="Self.YiChangCuLi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YiChangFenLei" EntityType="Self.YiChangFenLei" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YiChangFuZeRen" EntityType="Self.YiChangFuZeRen" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TJZHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="GtestUser">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="shuliang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bumen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dengluma" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="zhiwei" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="userxm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="TJZHEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GtestUser" EntityType="Self.GtestUser" />
+          <EntitySet Name="Gtestbiaodan" EntityType="TJZHModel.Gtestbiaodan" />
+          <EntitySet Name="YiChangFenLei" EntityType="TJZHModel.YiChangFenLei" />
+          <EntitySet Name="YiChangFuZeRen" EntityType="TJZHModel.YiChangFuZeRen" />
+          <EntitySet Name="YiChangCuLi" EntityType="TJZHModel.YiChangCuLi" />
+        </EntityContainer>
+        <EntityType Name="Gtestbiaodan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tbrq" Type="DateTime" Precision="0" />
+          <Property Name="tbbm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tbrgh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="cxrq" Type="DateTime" Precision="0" />
+          <Property Name="ycgx" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="zrbm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="btzr" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="wlmc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="wlxh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ph" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sbbh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="gsbgp" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="zt" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ycfl" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ycms" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+          <Property Name="zrrgh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="gjc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="yyfx" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+          <Property Name="zgjg" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+          <Property Name="gsbg" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="wcrq" Type="DateTime" Precision="0" />
+          <Property Name="xgqr" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+          <Property Name="bdzt" Type="Int32" />
+          <Property Name="gbrq" Type="DateTime" Precision="0" />
+          <Property Name="fouce" Type="Int32" />
+          <Property Name="zsjl" Type="Int32" />
+          <Property Name="zfrq" Type="DateTime" Precision="0" />
+          <Property Name="xyrq" Type="DateTime" Precision="0" />
+          <Property Name="gbzt" Type="Int32" />
+        </EntityType>
+        <EntityType Name="YiChangFenLei">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="YiChangFuZeRen">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="zrbm" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fzrgh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fzrxm" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="YiChangCuLi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="yichangid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="yyfx" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="zgjg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="xgqr" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="culitime" Type="DateTime" Precision="3" />
+          <Property Name="querentime" Type="DateTime" Precision="3" />
+          <Property Name="leixing" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="flag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="culiren" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TJZHModelStoreContainer" CdmEntityContainer="TJZHEntities">
+          <EntitySetMapping Name="GtestUser">
+            <EntityTypeMapping TypeName="TJZHModel.GtestUser">
+              <MappingFragment StoreEntitySet="GtestUser">
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="shuliang" ColumnName="shuliang" />
+                <ScalarProperty Name="bumen" ColumnName="bumen" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="dengluma" ColumnName="dengluma" />
+                <ScalarProperty Name="zhiwei" ColumnName="zhiwei" />
+                <ScalarProperty Name="userxm" ColumnName="userxm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gtestbiaodan">
+            <EntityTypeMapping TypeName="TJZHModel.Gtestbiaodan">
+              <MappingFragment StoreEntitySet="Gtestbiaodan">
+                <ScalarProperty Name="gbzt" ColumnName="gbzt" />
+                <ScalarProperty Name="xyrq" ColumnName="xyrq" />
+                <ScalarProperty Name="zfrq" ColumnName="zfrq" />
+                <ScalarProperty Name="zsjl" ColumnName="zsjl" />
+                <ScalarProperty Name="fouce" ColumnName="fouce" />
+                <ScalarProperty Name="gbrq" ColumnName="gbrq" />
+                <ScalarProperty Name="bdzt" ColumnName="bdzt" />
+                <ScalarProperty Name="xgqr" ColumnName="xgqr" />
+                <ScalarProperty Name="wcrq" ColumnName="wcrq" />
+                <ScalarProperty Name="gsbg" ColumnName="gsbg" />
+                <ScalarProperty Name="zgjg" ColumnName="zgjg" />
+                <ScalarProperty Name="yyfx" ColumnName="yyfx" />
+                <ScalarProperty Name="gjc" ColumnName="gjc" />
+                <ScalarProperty Name="zrrgh" ColumnName="zrrgh" />
+                <ScalarProperty Name="ycms" ColumnName="ycms" />
+                <ScalarProperty Name="ycfl" ColumnName="ycfl" />
+                <ScalarProperty Name="zt" ColumnName="zt" />
+                <ScalarProperty Name="gsbgp" ColumnName="gsbgp" />
+                <ScalarProperty Name="sbbh" ColumnName="sbbh" />
+                <ScalarProperty Name="sb" ColumnName="sb" />
+                <ScalarProperty Name="ph" ColumnName="ph" />
+                <ScalarProperty Name="wlxh" ColumnName="wlxh" />
+                <ScalarProperty Name="wlmc" ColumnName="wlmc" />
+                <ScalarProperty Name="btzr" ColumnName="btzr" />
+                <ScalarProperty Name="zrbm" ColumnName="zrbm" />
+                <ScalarProperty Name="ycgx" ColumnName="ycgx" />
+                <ScalarProperty Name="cxrq" ColumnName="cxrq" />
+                <ScalarProperty Name="tbrgh" ColumnName="tbrgh" />
+                <ScalarProperty Name="tbbm" ColumnName="tbbm" />
+                <ScalarProperty Name="tbrq" ColumnName="tbrq" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YiChangFenLei">
+            <EntityTypeMapping TypeName="TJZHModel.YiChangFenLei">
+              <MappingFragment StoreEntitySet="YiChangFenLei">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YiChangFuZeRen">
+            <EntityTypeMapping TypeName="TJZHModel.YiChangFuZeRen">
+              <MappingFragment StoreEntitySet="YiChangFuZeRen">
+                <ScalarProperty Name="fzrxm" ColumnName="fzrxm" />
+                <ScalarProperty Name="fzrgh" ColumnName="fzrgh" />
+                <ScalarProperty Name="zrbm" ColumnName="zrbm" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YiChangCuLi">
+            <EntityTypeMapping TypeName="TJZHModel.YiChangCuLi">
+              <MappingFragment StoreEntitySet="YiChangCuLi">
+                <ScalarProperty Name="culiren" ColumnName="culiren" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="leixing" ColumnName="leixing" />
+                <ScalarProperty Name="querentime" ColumnName="querentime" />
+                <ScalarProperty Name="culitime" ColumnName="culitime" />
+                <ScalarProperty Name="xgqr" ColumnName="xgqr" />
+                <ScalarProperty Name="zgjg" ColumnName="zgjg" />
+                <ScalarProperty Name="yyfx" ColumnName="yyfx" />
+                <ScalarProperty Name="yichangid" ColumnName="yichangid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

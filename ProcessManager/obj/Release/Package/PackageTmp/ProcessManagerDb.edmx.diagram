@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bf722a6f09af4557adc70f98284d56c9" Name="Diagram1">
+        <EntityTypeShape EntityType="ProcessManagerDbModel.Basice" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProcessManagerDbModel.Chaosong" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProcessManagerDbModel.Huiqian" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProcessManagerDbModel.Pizhu" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProcessManagerDbModel.Process" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProcessManagerDbModel.Predefine" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ProcessManagerDbModel.QingjiaDan" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ProcessManagerDbModel.FuZeRen" Width="1.5" PointX="3.375" PointY="7.75" />
+        <EntityTypeShape EntityType="ProcessManagerDbModel.BiaoList" Width="1.5" PointX="7.375" PointY="4.75" />
+        <EntityTypeShape EntityType="ProcessManagerDbModel.KeSuChanPinYWY" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="ProcessManagerDbModel.KeSuChanPinZZ" Width="1.5" PointX="7.375" PointY="7.75" />
+        <EntityTypeShape EntityType="ProcessManagerDbModel.KeSuDan" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ProcessManagerDbModel.BaoCun" Width="1.5" PointX="9.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

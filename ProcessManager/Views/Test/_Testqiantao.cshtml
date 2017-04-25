@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "_Testqiantao";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    int bid = 0;
+    if (ViewBag.yjpid != null)
+    {
+        bid = ViewBag.yjpid;
+    }
+}
+
+@if (ViewBag.canshen == "true")
+{
+<div class="row" style="margin-top:10px">
+    <div style="padding: 10px;background-color:white;box-shadow: 0 0 5px">
+        <form id="yjform" method="post" action="@ViewBag.burl/cuLi" class="form-inline col-sm-offset-4">
+            <div class="form-group" style="margin-right: 20px">
+                <label for="yijian">意见:</label>
+                @Html.TextBox("yijian","",new { @class= "form-control", style = "width: 500px", id = "yijian", placeholder = "20字以内" })
+            </div>
+            <div class="btn-group" role="group" aria-label="...">
+                <button id="tongyi"  class="btn btn-success stat">同意</button>
+                <button id="tuihui"  class="btn btn-warning stat">退回</button>
+                <button id="dahui"  class="btn btn-danger stat">打回</button>
+                @Html.Hidden("fangshi","",new {id="state" })
+                @Html.Hidden("bid", bid, new { id="pid"})
+            </div>
+        </form>
+
+    </div>
+</div>
+}
+
+<div class="row" style="box-shadow: 0 0 5px;background-color:ivory">@RenderBody()</div>
+
+
+@section scripts{
+    @RenderSection("datapicker", required: false)
+    <script>
+        $('button.stat').each(function () {
+            $(this).on('click', function () {
+                $('#state').val($(this).attr('id'));
+                $('#yjform').submit();
+            });
+        });
+    </script>
+}

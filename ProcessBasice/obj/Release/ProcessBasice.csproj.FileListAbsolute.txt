@@ -1,0 +1,5 @@
+C:\Users\tech\Documents\Visual Studio 2015\Projects\ProcessManager\ProcessBasice\bin\Release\ProcessBasice.dll
+C:\Users\tech\Documents\Visual Studio 2015\Projects\ProcessManager\ProcessBasice\bin\Release\ProcessBasice.pdb
+C:\Users\tech\Documents\Visual Studio 2015\Projects\ProcessManager\ProcessBasice\obj\Release\ProcessBasice.csprojResolveAssemblyReference.cache
+C:\Users\tech\Documents\Visual Studio 2015\Projects\ProcessManager\ProcessBasice\obj\Release\ProcessBasice.dll
+C:\Users\tech\Documents\Visual Studio 2015\Projects\ProcessManager\ProcessBasice\obj\Release\ProcessBasice.pdb

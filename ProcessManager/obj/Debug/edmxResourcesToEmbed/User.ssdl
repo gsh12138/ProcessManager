@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TJZHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Gtestbiaodan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tbrq" Type="date" />
+    <Property Name="tbbm" Type="varchar" MaxLength="50" />
+    <Property Name="tbrgh" Type="varchar" MaxLength="20" />
+    <Property Name="cxrq" Type="date" />
+    <Property Name="ycgx" Type="varchar" MaxLength="50" />
+    <Property Name="zrbm" Type="varchar" MaxLength="50" />
+    <Property Name="btzr" Type="varchar" MaxLength="20" />
+    <Property Name="wlmc" Type="varchar" MaxLength="50" />
+    <Property Name="wlxh" Type="varchar" MaxLength="50" />
+    <Property Name="ph" Type="varchar" MaxLength="50" />
+    <Property Name="sb" Type="varchar" MaxLength="50" />
+    <Property Name="sbbh" Type="varchar" MaxLength="20" />
+    <Property Name="gsbgp" Type="varchar" MaxLength="20" />
+    <Property Name="zt" Type="varchar" MaxLength="100" />
+    <Property Name="ycfl" Type="varchar" MaxLength="20" />
+    <Property Name="ycms" Type="varchar" MaxLength="800" />
+    <Property Name="zrrgh" Type="varchar" MaxLength="20" />
+    <Property Name="gjc" Type="varchar" MaxLength="50" />
+    <Property Name="yyfx" Type="varchar" MaxLength="800" />
+    <Property Name="zgjg" Type="varchar" MaxLength="800" />
+    <Property Name="gsbg" Type="varchar" MaxLength="100" />
+    <Property Name="wcrq" Type="date" />
+    <Property Name="xgqr" Type="varchar" MaxLength="800" />
+    <Property Name="bdzt" Type="int" />
+    <Property Name="gbrq" Type="date" />
+    <Property Name="fouce" Type="int" />
+    <Property Name="zsjl" Type="int" />
+    <Property Name="zfrq" Type="date" />
+    <Property Name="xyrq" Type="date" />
+    <Property Name="gbzt" Type="int" />
+  </EntityType>
+  <EntityType Name="GtestUser">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="shuliang" Type="nvarchar" MaxLength="50" />
+    <Property Name="bumen" Type="nvarchar" MaxLength="50" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="dengluma" Type="nvarchar" MaxLength="50" />
+    <Property Name="zhiwei" Type="nvarchar" MaxLength="50" />
+    <Property Name="userxm" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="YiChangCuLi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="yichangid" Type="varchar" MaxLength="50" />
+    <Property Name="yyfx" Type="varchar(max)" />
+    <Property Name="zgjg" Type="varchar(max)" />
+    <Property Name="xgqr" Type="varchar(max)" />
+    <Property Name="culitime" Type="datetime" />
+    <Property Name="querentime" Type="datetime" />
+    <Property Name="leixing" Type="varchar" MaxLength="10" />
+    <Property Name="flag" Type="varchar" MaxLength="10" />
+    <Property Name="culiren" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="YiChangFenLei">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="YiChangFuZeRen">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="zrbm" Type="varchar" MaxLength="20" />
+    <Property Name="fzrgh" Type="varchar" MaxLength="20" />
+    <Property Name="fzrxm" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityContainer Name="TJZHModelStoreContainer">
+    <EntitySet Name="Gtestbiaodan" EntityType="Self.Gtestbiaodan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GtestUser" EntityType="Self.GtestUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="YiChangCuLi" EntityType="Self.YiChangCuLi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="YiChangFenLei" EntityType="Self.YiChangFenLei" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="YiChangFuZeRen" EntityType="Self.YiChangFuZeRen" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

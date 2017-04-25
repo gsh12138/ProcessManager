@@ -1,0 +1,35 @@
+﻿body {
+    height: 100%;
+}
+
+div.container-fluid {
+    background-image: url("../../Content/QQ截图20150527145333.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 600px;
+}
+
+div.row {
+    margin-top: 10%;
+}
+
+div#neirong {
+    padding: 25px 25px 23px;
+    position: relative;
+    margin: 0 auto;
+    background-color: rgb(38, 114, 138);
+    box-shadow: -3px 3px 3px;
+    border-radius: 5px;
+}
+
+    div#neirong p {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: lightblue;
+        text-shadow: -1px 1px 1px;
+    }
+
+    div#neirong span.glyphicon {
+        color: rgb(47, 111, 166);
+    }

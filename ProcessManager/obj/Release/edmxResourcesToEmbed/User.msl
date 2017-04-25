@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TJZHModelStoreContainer" CdmEntityContainer="TJZHEntities">
+    <EntitySetMapping Name="GtestUser">
+      <EntityTypeMapping TypeName="TJZHModel.GtestUser">
+        <MappingFragment StoreEntitySet="GtestUser">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="shuliang" ColumnName="shuliang" />
+          <ScalarProperty Name="bumen" ColumnName="bumen" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="dengluma" ColumnName="dengluma" />
+          <ScalarProperty Name="zhiwei" ColumnName="zhiwei" />
+          <ScalarProperty Name="userxm" ColumnName="userxm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gtestbiaodan">
+      <EntityTypeMapping TypeName="TJZHModel.Gtestbiaodan">
+        <MappingFragment StoreEntitySet="Gtestbiaodan">
+          <ScalarProperty Name="gbzt" ColumnName="gbzt" />
+          <ScalarProperty Name="xyrq" ColumnName="xyrq" />
+          <ScalarProperty Name="zfrq" ColumnName="zfrq" />
+          <ScalarProperty Name="zsjl" ColumnName="zsjl" />
+          <ScalarProperty Name="fouce" ColumnName="fouce" />
+          <ScalarProperty Name="gbrq" ColumnName="gbrq" />
+          <ScalarProperty Name="bdzt" ColumnName="bdzt" />
+          <ScalarProperty Name="xgqr" ColumnName="xgqr" />
+          <ScalarProperty Name="wcrq" ColumnName="wcrq" />
+          <ScalarProperty Name="gsbg" ColumnName="gsbg" />
+          <ScalarProperty Name="zgjg" ColumnName="zgjg" />
+          <ScalarProperty Name="yyfx" ColumnName="yyfx" />
+          <ScalarProperty Name="gjc" ColumnName="gjc" />
+          <ScalarProperty Name="zrrgh" ColumnName="zrrgh" />
+          <ScalarProperty Name="ycms" ColumnName="ycms" />
+          <ScalarProperty Name="ycfl" ColumnName="ycfl" />
+          <ScalarProperty Name="zt" ColumnName="zt" />
+          <ScalarProperty Name="gsbgp" ColumnName="gsbgp" />
+          <ScalarProperty Name="sbbh" ColumnName="sbbh" />
+          <ScalarProperty Name="sb" ColumnName="sb" />
+          <ScalarProperty Name="ph" ColumnName="ph" />
+          <ScalarProperty Name="wlxh" ColumnName="wlxh" />
+          <ScalarProperty Name="wlmc" ColumnName="wlmc" />
+          <ScalarProperty Name="btzr" ColumnName="btzr" />
+          <ScalarProperty Name="zrbm" ColumnName="zrbm" />
+          <ScalarProperty Name="ycgx" ColumnName="ycgx" />
+          <ScalarProperty Name="cxrq" ColumnName="cxrq" />
+          <ScalarProperty Name="tbrgh" ColumnName="tbrgh" />
+          <ScalarProperty Name="tbbm" ColumnName="tbbm" />
+          <ScalarProperty Name="tbrq" ColumnName="tbrq" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YiChangFenLei">
+      <EntityTypeMapping TypeName="TJZHModel.YiChangFenLei">
+        <MappingFragment StoreEntitySet="YiChangFenLei">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YiChangFuZeRen">
+      <EntityTypeMapping TypeName="TJZHModel.YiChangFuZeRen">
+        <MappingFragment StoreEntitySet="YiChangFuZeRen">
+          <ScalarProperty Name="fzrxm" ColumnName="fzrxm" />
+          <ScalarProperty Name="fzrgh" ColumnName="fzrgh" />
+          <ScalarProperty Name="zrbm" ColumnName="zrbm" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YiChangCuLi">
+      <EntityTypeMapping TypeName="TJZHModel.YiChangCuLi">
+        <MappingFragment StoreEntitySet="YiChangCuLi">
+          <ScalarProperty Name="culiren" ColumnName="culiren" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="leixing" ColumnName="leixing" />
+          <ScalarProperty Name="querentime" ColumnName="querentime" />
+          <ScalarProperty Name="culitime" ColumnName="culitime" />
+          <ScalarProperty Name="xgqr" ColumnName="xgqr" />
+          <ScalarProperty Name="zgjg" ColumnName="zgjg" />
+          <ScalarProperty Name="yyfx" ColumnName="yyfx" />
+          <ScalarProperty Name="yichangid" ColumnName="yichangid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

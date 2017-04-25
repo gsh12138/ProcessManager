@@ -1,0 +1,42 @@
+﻿.media-body button.btn {
+    margin-right: 5px;
+    position: relative;
+    width: 70px;
+}
+
+.media-body .alert {
+    position: absolute;
+    top: 2.5em;
+    left: -3px;
+    color: black;
+    z-index: 3;
+}
+
+div.media {
+    background-color: whitesmoke;
+    padding: 8px;
+    border-radius:5px;
+    box-shadow:0 0 2px;
+}
+
+.container > div.row > div {
+    padding: 10px;
+    border-right: solid 1px rgb(1, 140, 225);
+    border-left: solid 1px rgb(1, 140, 225);
+    
+}
+
+.media, .media-body {
+    overflow: visible;
+}
+
+.media-left>p{
+    width: 50px;padding-left: 20px;
+}
+
+.mover{
+    border-left:solid 2px deepskyblue;
+    box-shadow:0 0 5px;
+    
+    
+}

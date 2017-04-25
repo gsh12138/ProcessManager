@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TJZHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="GtestUser">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="shuliang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bumen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dengluma" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="zhiwei" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="userxm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="TJZHEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="GtestUser" EntityType="Self.GtestUser" />
+    <EntitySet Name="Gtestbiaodan" EntityType="TJZHModel.Gtestbiaodan" />
+    <EntitySet Name="YiChangFenLei" EntityType="TJZHModel.YiChangFenLei" />
+    <EntitySet Name="YiChangFuZeRen" EntityType="TJZHModel.YiChangFuZeRen" />
+    <EntitySet Name="YiChangCuLi" EntityType="TJZHModel.YiChangCuLi" />
+  </EntityContainer>
+  <EntityType Name="Gtestbiaodan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tbrq" Type="DateTime" Precision="0" />
+    <Property Name="tbbm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tbrgh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cxrq" Type="DateTime" Precision="0" />
+    <Property Name="ycgx" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zrbm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="btzr" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="wlmc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="wlxh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ph" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sbbh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="gsbgp" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="zt" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ycfl" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ycms" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="zrrgh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="gjc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yyfx" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="zgjg" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="gsbg" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="wcrq" Type="DateTime" Precision="0" />
+    <Property Name="xgqr" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="bdzt" Type="Int32" />
+    <Property Name="gbrq" Type="DateTime" Precision="0" />
+    <Property Name="fouce" Type="Int32" />
+    <Property Name="zsjl" Type="Int32" />
+    <Property Name="zfrq" Type="DateTime" Precision="0" />
+    <Property Name="xyrq" Type="DateTime" Precision="0" />
+    <Property Name="gbzt" Type="Int32" />
+  </EntityType>
+  <EntityType Name="YiChangFenLei">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="YiChangFuZeRen">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="zrbm" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fzrgh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fzrxm" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="YiChangCuLi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="yichangid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yyfx" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="zgjg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xgqr" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="culitime" Type="DateTime" Precision="3" />
+    <Property Name="querentime" Type="DateTime" Precision="3" />
+    <Property Name="leixing" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="flag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="culiren" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

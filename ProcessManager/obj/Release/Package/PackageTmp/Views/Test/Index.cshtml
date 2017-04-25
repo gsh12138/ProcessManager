@@ -1,0 +1,163 @@
+﻿@using ProcessManager.Models
+@using ProcessBasice.ChangLiang
+@model ProcessListInfo
+@{
+    ViewBag.Title = "Index";
+    ViewBag.user = Model.userxm;
+    ViewBag.userid = Model.userid;
+    ViewBag.userbm = Model.userbm;
+}
+
+@Styles.Render("~/Content/css/neirong");
+
+
+
+<div class="row">
+    <div>
+        @{
+            foreach (ProcessManager.Models.ProcessInfo info in Model.linfo)
+            {
+                <div class="media">
+                    <div class="media-left">
+
+                        @switch (info.predefine.State)
+                        {
+                            case PredefineState.FINISH:
+                                <p style="color: green" class="glyphicon glyphicon-ok"></p>
+
+                                break;
+                            case PredefineState.BACK:
+                                <p style="color: sandybrown" class="glyphicon glyphicon-refresh"></p>
+
+                                break;
+                            case PredefineState.RETURN:
+                                <p style="color: red" class="glyphicon glyphicon-repeat"></p>
+                                break;
+                            case PredefineState.PROCESSING:
+                                <p style="color: deepskyblue" class="glyphicon glyphicon-pencil"></p>
+                                break;
+                            case PredefineState.JIAQIAN:
+                                <p style="color: darkmagenta" class="glyphicon glyphicon-plus-sign"></p>
+                                break;
+                            case PredefineState.XIANQIAN:
+                                break;
+                            default:
+                                break;
+                        }
+                        <span class="label label-primary" style="float: right">@info.processstate</span>
+
+                    </div>
+
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href="@info.url/@info.predefine.Bid">@info.leixing:@info.predefine.Bid</a></h4>
+                        @{
+                            foreach (ProcessProcessModel process in info.lprocess)
+                            {
+                                switch (process.State)
+                                {
+                                    case ProcessState.FINISH:
+                                        <button data-pid="@process.Pid" data-order="@process.Order" class="btn btn-success">@process.Handler</button><input type="hidden" value="@process.pizhu" />
+                                        break;
+                                    case ProcessState.BACK:
+                                        <button data-pid="@process.Pid" data-order="@process.Order" class="btn btn-warning">@process.Handler</button><input type="hidden" value="@process.pizhu" />
+                                        break;
+                                    case ProcessState.RETURN:
+                                        <button data-pid="@process.Pid" data-order="@process.Order" class="btn btn-danger">@process.Handler</button><input type="hidden" value="@process.pizhu" />
+                                        break;
+                                    case ProcessState.DEFINE:
+                                        if (process.Handler.Equals(info.predefine.Handler))
+                                        {
+                                            <button data-pid="@process.Pid" data-order="@process.Order" class="btn btn-primary">@process.Handler</button><input type="hidden" value="@process.pizhu" />
+                                        }
+                                        else
+                                        {
+                                            <button data-pid="@process.Pid" data-order="@process.Order" class="btn btn-default">@process.Handler</button><input type="hidden" value="@process.pizhu" />
+                                        }
+                                        break;
+                                    case ProcessState.BEGIN:
+                                        <button data-pid="@process.Pid" data-order="@process.Order" class="btn btn-info">@process.Handler</button><input type="hidden" value="@process.pizhu" />
+                                        break;
+                                    case ProcessState.JIAQIAN:
+                                        <button data-pid="@process.Pid" data-order="@process.Order" class="btn btn-warning">@process.Handler</button><input type="hidden" value="@process.pizhu" />
+                                        break;
+                                    case ProcessState.XIANQIAN:
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                if (info.lprocess.IndexOf(process) != info.lprocess.Count - 1)
+                                {
+                                    <span class="glyphicon glyphicon-arrow-right"></span>
+                                }
+                            }
+                            <span class="label label-info" style="float: right">@info.predefinestate</span>
+                        }
+                    </div>
+
+                </div>
+                            }
+        }
+        @*<a href="#" class="btn btn-success">张张三</a><input type="hidden"/><span class="glyphicon glyphicon-arrow-right"></span>
+            <a href="#" class="btn btn-success">李四</a><span class="glyphicon glyphicon-arrow-right"></span>
+            <a href="#" class="btn btn-primary">王五</a><span class="glyphicon glyphicon-arrow-right"></span>
+            <a href="#" class="btn btn-info">赵柳</a><span class="glyphicon glyphicon-arrow-right"></span>
+            <a href="#" class="btn btn-info">张三</a><span class="glyphicon glyphicon-arrow-right"></span>
+            <a href="#" class="btn btn-info">张三</a>*@
+    </div>
+</div>
+
+
+@section scripts
+{
+    <script>
+        $('.media').on('mouseover', function () {
+            $(this).addClass('mover');
+            $(this).css('background-color', 'lightblue');
+            $(this).find('h4').children('a').css('color', 'black');      
+        }).on('mouseleave', function () {
+            $(this).removeClass('mover');
+            $(this).css('background-color', 'whitesmoke');
+            $(this).find('h4').children('a').css('color', '');  
+        });
+        $('.media-body button.btn').on('mouseover', function () {
+            let ht = $(this).next('input').val();
+            let xx = $('<div></div>').addClass('alert').addClass('alert-success').attr('role', 'alert')
+                        .html(ht);
+            if (ht != '') {
+                $(this).append(xx);
+            }
+        }).on('mouseleave', function () {
+            $(this).children('div.alert').remove();
+        });
+        $('.media-body button.btn').each(function () {
+            if ($(this).html() == "会签") {
+                $(this).unbind();
+                var that = this;
+                let pid = $(this).attr('data-pid');
+                let order = $(this).attr('data-order');
+                $(this).on('click', function () {
+                    
+                    $.post('/api/HuiqianApi/Index/'+pid+'/'+order, function (data) {
+                        var xx = $('<div></div>').addClass('alert').addClass('alert-success').attr('role', 'alert');
+                        
+                        $.each(data,function (index, ele) {
+                            let bt = $('<button></button>').addClass('btn').html(ele.Hanlder);
+                            if (ele.State == 2) {
+                                bt.addClass('btn-success');
+                            } else if (ele.State == 3) {
+                                bt.addClass('btn-default');
+                            } else {
+                                bt.addClass('btn-danger');
+                            }
+                            xx.append(bt);
+                        });
+                        $(that).append(xx);
+                    });
+                }).on('blur', function () {
+                    $(this).children('div.alert').remove();
+                });
+            };
+        });
+            
+    </script>
+}

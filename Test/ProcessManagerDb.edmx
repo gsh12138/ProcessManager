@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ProcessManagerDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Basice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="pid" Type="int" />
+          <Property Name="bid" Type="int" />
+          <Property Name="steps" Type="int" />
+          <Property Name="hanlder" Type="varchar" MaxLength="20" />
+          <Property Name="nexthanlder" Type="varchar" MaxLength="20" />
+          <Property Name="lasthanlder" Type="varchar" MaxLength="20" />
+          <Property Name="state" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Chaosong">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="pid" Type="int" />
+          <Property Name="steps" Type="int" />
+          <Property Name="hanlder" Type="varchar" MaxLength="20" />
+          <Property Name="state" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Huiqian">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="pid" Type="int" />
+          <Property Name="steps" Type="int" />
+          <Property Name="hanlder" Type="varchar" MaxLength="20" />
+          <Property Name="state" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Pizhu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="pid" Type="int" />
+          <Property Name="steps" Type="int" />
+          <Property Name="hanlder" Type="varchar" MaxLength="20" />
+          <Property Name="detail" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Predefine">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="pid" Type="int" />
+          <Property Name="bid" Type="int" />
+          <Property Name="steps" Type="int" />
+          <Property Name="hanlder" Type="varchar" MaxLength="20" />
+          <Property Name="nexthanlder" Type="varchar" MaxLength="20" />
+          <Property Name="lasthanlder" Type="varchar" MaxLength="20" />
+          <Property Name="state" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Process">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="pid" Type="int" />
+          <Property Name="bid" Type="int" />
+          <Property Name="steps" Type="int" />
+          <Property Name="hanlder" Type="varchar" MaxLength="20" />
+          <Property Name="nexthanlder" Type="varchar" MaxLength="20" />
+          <Property Name="lasthanlder" Type="varchar" MaxLength="20" />
+          <Property Name="state" Type="varchar" MaxLength="10" />
+          <Property Name="detial" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="ProcessManagerDbModelStoreContainer">
+          <EntitySet Name="Basice" EntityType="Self.Basice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Chaosong" EntityType="Self.Chaosong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Huiqian" EntityType="Self.Huiqian" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pizhu" EntityType="Self.Pizhu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Predefine" EntityType="Self.Predefine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Process" EntityType="Self.Process" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProcessManagerDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Basice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="pid" Type="Int32" />
+          <Property Name="bid" Type="Int32" />
+          <Property Name="steps" Type="Int32" />
+          <Property Name="hanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="nexthanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="lasthanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Chaosong">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="pid" Type="Int32" />
+          <Property Name="steps" Type="Int32" />
+          <Property Name="hanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Huiqian">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="pid" Type="Int32" />
+          <Property Name="steps" Type="Int32" />
+          <Property Name="hanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Pizhu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="pid" Type="Int32" />
+          <Property Name="steps" Type="Int32" />
+          <Property Name="hanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="detail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Predefine">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="pid" Type="Int32" />
+          <Property Name="bid" Type="Int32" />
+          <Property Name="steps" Type="Int32" />
+          <Property Name="hanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="nexthanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="lasthanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Process">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="pid" Type="Int32" />
+          <Property Name="bid" Type="Int32" />
+          <Property Name="steps" Type="Int32" />
+          <Property Name="hanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="nexthanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="lasthanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="detial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="ProcessManagerDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Basice" EntityType="Self.Basice" />
+          <EntitySet Name="Chaosong" EntityType="Self.Chaosong" />
+          <EntitySet Name="Huiqian" EntityType="Self.Huiqian" />
+          <EntitySet Name="Pizhu" EntityType="Self.Pizhu" />
+          <EntitySet Name="Predefine" EntityType="Self.Predefine" />
+          <EntitySet Name="Process" EntityType="Self.Process" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProcessManagerDbModelStoreContainer" CdmEntityContainer="ProcessManagerDbEntities">
+          <EntitySetMapping Name="Basice">
+            <EntityTypeMapping TypeName="ProcessManagerDbModel.Basice">
+              <MappingFragment StoreEntitySet="Basice">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="bid" ColumnName="bid" />
+                <ScalarProperty Name="steps" ColumnName="steps" />
+                <ScalarProperty Name="hanlder" ColumnName="hanlder" />
+                <ScalarProperty Name="nexthanlder" ColumnName="nexthanlder" />
+                <ScalarProperty Name="lasthanlder" ColumnName="lasthanlder" />
+                <ScalarProperty Name="state" ColumnName="state" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Chaosong">
+            <EntityTypeMapping TypeName="ProcessManagerDbModel.Chaosong">
+              <MappingFragment StoreEntitySet="Chaosong">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="steps" ColumnName="steps" />
+                <ScalarProperty Name="hanlder" ColumnName="hanlder" />
+                <ScalarProperty Name="state" ColumnName="state" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Huiqian">
+            <EntityTypeMapping TypeName="ProcessManagerDbModel.Huiqian">
+              <MappingFragment StoreEntitySet="Huiqian">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="steps" ColumnName="steps" />
+                <ScalarProperty Name="hanlder" ColumnName="hanlder" />
+                <ScalarProperty Name="state" ColumnName="state" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pizhu">
+            <EntityTypeMapping TypeName="ProcessManagerDbModel.Pizhu">
+              <MappingFragment StoreEntitySet="Pizhu">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="steps" ColumnName="steps" />
+                <ScalarProperty Name="hanlder" ColumnName="hanlder" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Predefine">
+            <EntityTypeMapping TypeName="ProcessManagerDbModel.Predefine">
+              <MappingFragment StoreEntitySet="Predefine">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="bid" ColumnName="bid" />
+                <ScalarProperty Name="steps" ColumnName="steps" />
+                <ScalarProperty Name="hanlder" ColumnName="hanlder" />
+                <ScalarProperty Name="nexthanlder" ColumnName="nexthanlder" />
+                <ScalarProperty Name="lasthanlder" ColumnName="lasthanlder" />
+                <ScalarProperty Name="state" ColumnName="state" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Process">
+            <EntityTypeMapping TypeName="ProcessManagerDbModel.Process">
+              <MappingFragment StoreEntitySet="Process">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="bid" ColumnName="bid" />
+                <ScalarProperty Name="steps" ColumnName="steps" />
+                <ScalarProperty Name="hanlder" ColumnName="hanlder" />
+                <ScalarProperty Name="nexthanlder" ColumnName="nexthanlder" />
+                <ScalarProperty Name="lasthanlder" ColumnName="lasthanlder" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="detial" ColumnName="detial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

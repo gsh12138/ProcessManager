@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProcessManagerDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Basice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="bid" Type="Int32" />
+    <Property Name="steps" Type="Int32" />
+    <Property Name="hanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nexthanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="lasthanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Chaosong">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="steps" Type="Int32" />
+    <Property Name="hanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Huiqian">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="steps" Type="Int32" />
+    <Property Name="hanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Pizhu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="steps" Type="Int32" />
+    <Property Name="hanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="detail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="pdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Process">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="bid" Type="Int32" />
+    <Property Name="steps" Type="Int32" />
+    <Property Name="hanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nexthanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="lasthanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="detial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sdate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="ProcessManagerDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Basice" EntityType="Self.Basice" />
+    <EntitySet Name="Chaosong" EntityType="Self.Chaosong" />
+    <EntitySet Name="Huiqian" EntityType="Self.Huiqian" />
+    <EntitySet Name="Pizhu" EntityType="Self.Pizhu" />
+    <EntitySet Name="Process" EntityType="Self.Process" />
+    <EntitySet Name="Predefine" EntityType="ProcessManagerDbModel.Predefine" />
+    <EntitySet Name="QingjiaDan" EntityType="ProcessManagerDbModel.QingjiaDan" />
+    <EntitySet Name="FuZeRen" EntityType="ProcessManagerDbModel.FuZeRen" />
+    <EntitySet Name="BiaoList" EntityType="ProcessManagerDbModel.BiaoList" />
+    <EntitySet Name="KeSuChanPinYWY" EntityType="ProcessManagerDbModel.KeSuChanPinYWY" />
+    <EntitySet Name="KeSuChanPinZZ" EntityType="ProcessManagerDbModel.KeSuChanPinZZ" />
+    <EntitySet Name="KeSuDan" EntityType="ProcessManagerDbModel.KeSuDan" />
+    <EntitySet Name="BaoCun" EntityType="ProcessManagerDbModel.BaoCun" />
+  </EntityContainer>
+  <EntityType Name="Predefine">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="bid" Type="Int32" />
+    <Property Name="steps" Type="Int32" />
+    <Property Name="hanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nexthanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="lasthanlder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="QingjiaDan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="bid" Type="Int32" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="leixing" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="startime" Type="DateTime" Precision="0" />
+    <Property Name="finishtime" Type="DateTime" Precision="0" />
+    <Property Name="tianshu" Type="Int32" />
+    <Property Name="shenqingren" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tijiaotime" Type="DateTime" Precision="0" />
+    <Property Name="detil" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FuZeRen">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="zhiwei" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="gonghao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="xingming" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="bumen" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="id" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BiaoList">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="detil" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="url" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="KeSuChanPinYWY">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="bid" Type="Int32" />
+    <Property Name="ddh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sl" Type="Int32" />
+    <Property Name="yy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="thh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="wt" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="KeSuChanPinZZ">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="bid" Type="Int32" />
+    <Property Name="ddh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sl" Type="Int32" />
+    <Property Name="yy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="thh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="wt" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="KeSuDan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="bid" Type="Int32" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="khbh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tbrq" Type="DateTime" Precision="0" />
+    <Property Name="tbr" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BaoCun">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="bid" Type="Int32" />
+    <Property Name="bcr" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="bcrq" Type="DateTime" Precision="0" />
+    <Property Name="state" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

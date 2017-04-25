@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "_XiaYiBu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="margin-top:10px">
+    <div style="padding: 10px;background-color:white;box-shadow: 0 0 5px">
+        <div class="form-inline col-sm-offset-10">
+            <div class="btn-group" role="group" aria-label="...">
+                <button id="xyb" class="btn btn-primary">下一步</button>
+                
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row" style="box-shadow: 0 0 5px;background-color:ivory">@RenderBody()</div>
+
+
+@section scripts{
+    @RenderSection("datapicker", required: false)
+}
+

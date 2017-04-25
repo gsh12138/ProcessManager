@@ -1,0 +1,30 @@
+﻿body{
+    background-color:floralwhite;
+}
+nav div.container-fluid {
+    background-color: rgb(1, 140, 225);
+}
+
+a.navbar-brand {
+    padding: 0;
+}
+
+    a.navbar-brand image {
+        height: 100%;
+    }
+
+.navbar-default .navbar-text {
+    color: white;
+    font-weight: bold;
+}
+
+.container-fluid > div.row {
+    border: solid 1px rgb(1, 140, 225);
+    
+}
+
+.container-fluid{
+    background-color:rgb(1, 140, 225);
+}
+
+

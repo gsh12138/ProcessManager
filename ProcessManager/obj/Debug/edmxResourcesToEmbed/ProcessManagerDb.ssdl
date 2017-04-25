@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProcessManagerDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BaoCun">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="bid" Type="int" />
+    <Property Name="bcr" Type="varchar" MaxLength="20" />
+    <Property Name="bcrq" Type="date" />
+    <Property Name="state" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Basice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="pid" Type="int" />
+    <Property Name="bid" Type="int" />
+    <Property Name="steps" Type="int" />
+    <Property Name="hanlder" Type="varchar" MaxLength="20" />
+    <Property Name="nexthanlder" Type="varchar" MaxLength="20" />
+    <Property Name="lasthanlder" Type="varchar" MaxLength="20" />
+    <Property Name="state" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="BiaoList">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="20" />
+    <Property Name="detil" Type="varchar" MaxLength="100" />
+    <Property Name="pid" Type="int" />
+    <Property Name="url" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Chaosong">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="pid" Type="int" />
+    <Property Name="steps" Type="int" />
+    <Property Name="hanlder" Type="varchar" MaxLength="20" />
+    <Property Name="state" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="FuZeRen">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="zhiwei" Type="varchar" MaxLength="20" />
+    <Property Name="gonghao" Type="varchar" MaxLength="20" />
+    <Property Name="xingming" Type="varchar" MaxLength="20" />
+    <Property Name="bumen" Type="varchar" MaxLength="20" />
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Huiqian">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="pid" Type="int" />
+    <Property Name="steps" Type="int" />
+    <Property Name="hanlder" Type="varchar" MaxLength="20" />
+    <Property Name="state" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="KeSuChanPinYWY">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="bid" Type="int" />
+    <Property Name="ddh" Type="varchar" MaxLength="20" />
+    <Property Name="sl" Type="int" />
+    <Property Name="yy" Type="varchar" MaxLength="100" />
+    <Property Name="thh" Type="varchar" MaxLength="20" />
+    <Property Name="wt" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="KeSuChanPinZZ">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="bid" Type="int" />
+    <Property Name="ddh" Type="varchar" MaxLength="20" />
+    <Property Name="sl" Type="int" />
+    <Property Name="yy" Type="varchar" MaxLength="100" />
+    <Property Name="thh" Type="varchar" MaxLength="20" />
+    <Property Name="wt" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="KeSuDan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="bid" Type="int" />
+    <Property Name="pid" Type="int" />
+    <Property Name="khbh" Type="varchar" MaxLength="20" />
+    <Property Name="tbrq" Type="date" />
+    <Property Name="tbr" Type="varchar" MaxLength="20" />
+    <Property Name="state" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Pizhu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="pid" Type="int" />
+    <Property Name="steps" Type="int" />
+    <Property Name="hanlder" Type="varchar" MaxLength="20" />
+    <Property Name="detail" Type="varchar" MaxLength="100" />
+    <Property Name="pdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Predefine">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="pid" Type="int" />
+    <Property Name="bid" Type="int" />
+    <Property Name="steps" Type="int" />
+    <Property Name="hanlder" Type="varchar" MaxLength="20" />
+    <Property Name="nexthanlder" Type="varchar" MaxLength="20" />
+    <Property Name="lasthanlder" Type="varchar" MaxLength="20" />
+    <Property Name="state" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Process">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="pid" Type="int" />
+    <Property Name="bid" Type="int" />
+    <Property Name="steps" Type="int" />
+    <Property Name="hanlder" Type="varchar" MaxLength="20" />
+    <Property Name="nexthanlder" Type="varchar" MaxLength="20" />
+    <Property Name="lasthanlder" Type="varchar" MaxLength="20" />
+    <Property Name="state" Type="varchar" MaxLength="10" />
+    <Property Name="detial" Type="varchar" MaxLength="100" />
+    <Property Name="sdate" Type="date" />
+  </EntityType>
+  <EntityType Name="QingjiaDan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="bid" Type="int" />
+    <Property Name="pid" Type="int" />
+    <Property Name="leixing" Type="varchar" MaxLength="20" />
+    <Property Name="startime" Type="date" />
+    <Property Name="finishtime" Type="date" />
+    <Property Name="tianshu" Type="int" />
+    <Property Name="shenqingren" Type="varchar" MaxLength="20" />
+    <Property Name="tijiaotime" Type="date" />
+    <Property Name="detil" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityContainer Name="ProcessManagerDbModelStoreContainer">
+    <EntitySet Name="BaoCun" EntityType="Self.BaoCun" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Basice" EntityType="Self.Basice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BiaoList" EntityType="Self.BiaoList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chaosong" EntityType="Self.Chaosong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FuZeRen" EntityType="Self.FuZeRen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Huiqian" EntityType="Self.Huiqian" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KeSuChanPinYWY" EntityType="Self.KeSuChanPinYWY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KeSuChanPinZZ" EntityType="Self.KeSuChanPinZZ" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KeSuDan" EntityType="Self.KeSuDan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pizhu" EntityType="Self.Pizhu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Predefine" EntityType="Self.Predefine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Process" EntityType="Self.Process" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QingjiaDan" EntityType="Self.QingjiaDan" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

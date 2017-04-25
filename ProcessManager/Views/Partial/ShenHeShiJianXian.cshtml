@@ -1,0 +1,53 @@
+﻿@using ProcessManager.Models
+@using ProcessBasice.ChangLiang
+@model ListShiJianXian
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>状态</th>
+            <th>操作人</th>
+            <th>操作时间</th>
+            <th>批注</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ShiJianXianModel xian in Model.shijianxians) {
+            <tr>
+                <td>
+                    @switch (xian.state) {
+                        case ProcessState.FINISH:
+                            <span class="label label-primary">
+                                <i class="fa fa-check"></i> 同意
+                            </span>
+                            break;
+                        case ProcessState.RETURN:
+                            <span class="label label-danger">
+                                <i class="fa fa-reply"></i> 打回
+                            </span>
+                            break;
+                        case ProcessState.BEGIN:
+                            <span class="label label-info">
+                                <i class="fa fa-paint-brush"></i> 发起
+                            </span>
+                            break;
+                        default:
+                            break;
+                    }
+                   
+                </td>
+                <td>
+                    @xian.caozuoren
+                </td>
+                <td>
+                    @xian.caozuotime
+                </td>
+                <td>
+                    @xian.pizhu
+                </td>
+            </tr>
+        }
+        
+        
+
+    </tbody>
+</table>

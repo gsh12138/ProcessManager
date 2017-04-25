@@ -1,0 +1,5 @@
+c:\users\tech\documents\visual studio 2015\Projects\ProcessManager\ProcessBasice\bin\Debug\ProcessBasice.dll
+c:\users\tech\documents\visual studio 2015\Projects\ProcessManager\ProcessBasice\bin\Debug\ProcessBasice.pdb
+c:\users\tech\documents\visual studio 2015\Projects\ProcessManager\ProcessBasice\obj\Debug\ProcessBasice.dll
+c:\users\tech\documents\visual studio 2015\Projects\ProcessManager\ProcessBasice\obj\Debug\ProcessBasice.pdb
+C:\Users\tech\Documents\Visual Studio 2015\Projects\ProcessManager\ProcessBasice\obj\Debug\ProcessBasice.csprojResolveAssemblyReference.cache

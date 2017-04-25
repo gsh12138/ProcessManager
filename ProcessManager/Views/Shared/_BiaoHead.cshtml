@@ -1,0 +1,202 @@
+﻿
+@using ProcessManager.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "请假单";
+    BiaoDanHeadModel head = ViewBag.head;
+    ProcessPiZhu pizhu = new ProcessPiZhu();
+    pizhu.Pid = ViewBag.bid;
+    string none = null;
+    if (head.isShenHE != BiaoDanState.shenhe) {
+        none = "none";
+    }
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>@head.name</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li class="active">
+                <strong>@head.name</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-9 wrapper-content animated fadeInUp">
+        <div class="ibox">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="m-b-md">
+                            <a data-toggle="modal" style="display:@none" class="btn btn-primary pull-right" href="#modal-form">审核单据</a>
+                            @Html.Partial("~/Views/Partial/ShenHePartial.cshtml",pizhu)
+                            <h2>@head.name</h2>
+                        </div>
+                        <dl class="dl-horizontal">
+                            <dt>状态:</dt>
+                            @switch (@head.state) {
+                                case "已完成":
+                                    <dd><span class="label label-info">@head.state</span></dd>
+                                    break;
+                                case "被打回":
+                                    <dd><span class="label label-danger">@head.state</span></dd>
+                                    break;
+                                case "审核中":
+                                    <dd><span class="label label-primary">@head.state</span></dd>
+                                    break;
+                                case "发起":
+                                    <dd><span class="label label-default">@head.state</span></dd>
+                                    break;
+                                default:
+                                    break;
+                            }
+                            
+                        </dl>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <dl class="dl-horizontal">
+
+                            <dt>发起人:</dt>
+                            <dd>@head.faqiren</dd>
+                            <dt>创建日期:</dt>
+                            <dd> 	@head.creatdate </dd>
+                            <dt>上次审核日期:</dt>
+                            <dd>@head.lastshenhedate</dd>
+                            <dt>上一个审核人:</dt>
+                            <dd>@head.lastshenheren</dd>
+                        </dl>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <dl class="dl-horizontal">
+                            <dt>流程参与人:</dt>
+                            <dd class="project-people">
+                                @foreach (CanYuRen m in head.canyuren) {
+                                    if (m.state != null) {
+                                        if (m.state.Equals("HUIQIAN")) {
+                                            <span class="label label-warning">@m.name</span>
+                                        }
+                                    } else {
+                                    <span class="label label-primary">@m.name</span>
+                                    }
+                                }
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <dl class="dl-horizontal">
+                            <dt>审核进度:</dt>
+                            <dd>
+                                <div class="progress progress-striped active m-b-sm">
+                                    <div style="width: @head.jindu%;" class="progress-bar"></div>
+                                </div>
+                                <small>流程完成度 <strong>@head.jindu%</strong>. </small>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="row m-t-sm">
+                    <div class="col-lg-12">
+                        <div class="panel blank-panel">
+                            <div class="panel-heading">
+                                <div class="panel-options">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a href="#tab-1" data-toggle="tab">表单</a></li>
+                                        <li class=""><a href="#tab-2" data-toggle="tab">审核时间线</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="tab-1">
+                                        @RenderBody()
+                                    </div>
+                                    <div class="tab-pane" id="tab-2">
+                                        @Html.Partial("~/Views/Partial/ShenHeShiJianXian.cshtml",head.shijianxian)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="wrapper wrapper-content project-manager">
+            <h4>流程介绍</h4>
+            <img src="~/Images/zender_logo.png" class="img-responsive">
+            <p class="small">
+                @head.jieshao
+            </p>
+            
+            
+            @*<h5>附带文件</h5>
+    <ul class="list-unstyled project-files">
+        <li><a href=""><i class="fa fa-file"></i> Project_document.docx</a></li>
+        <li><a href=""><i class="fa fa-file-picture-o"></i> Logo_zender_company.jpg</a></li>
+        <li><a href=""><i class="fa fa-stack-exchange"></i> Email_from_Alex.mln</a></li>
+        <li><a href=""><i class="fa fa-file"></i> Contract_20_11_2014.docx</a></li>
+    </ul>
+    <div class="text-center m-t-md">
+        <a href="#" class="btn btn-xs btn-primary">添加文件</a>
+    </div>*@
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+    @Styles.Render("~/css/datapicker")
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/iCheck")
+    @Scripts.Render("~/js/datapicker")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+            
+            $('.datapic').datetimepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+                minView: 2,
+                language: 'zh-CN'
+            }).on('changeDate', function (ev) {
+                if (Date.parse($('#startime').val()) > Date.parse($('#finishtime').val())) {
+                    $('#ts').html('开始日期大于结束日期').addClass('text-danger');
+                } else {
+                    var star = new Date(Date.parse($('#startime').val()));
+                    var finish = new Date(Date.parse($('#finishtime').val()));
+                    var tt = (Math.abs(finish - star)) / (1000 * 60 * 60 * 24);
+                    $('#ts').html(tt + '天').removeClass('text-danger');
+                }
+            });
+            $('#tongyi').on('click', function () {
+                $('#shenhekuang').attr('action', '/CuLi/tongyi');
+                $('#shenhekuang').submit();
+            });
+            $('#dahui').on('click', function () {
+                $('#shenhekuang').attr('action', '/CuLi/dahui');
+                $('#shenhekuang').submit();
+            });
+        });
+    </script>
+}
+

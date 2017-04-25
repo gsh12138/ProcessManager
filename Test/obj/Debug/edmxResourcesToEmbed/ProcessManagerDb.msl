@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProcessManagerDbModelStoreContainer" CdmEntityContainer="ProcessManagerDbEntities">
+    <EntitySetMapping Name="Basice">
+      <EntityTypeMapping TypeName="ProcessManagerDbModel.Basice">
+        <MappingFragment StoreEntitySet="Basice">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="bid" ColumnName="bid" />
+          <ScalarProperty Name="steps" ColumnName="steps" />
+          <ScalarProperty Name="hanlder" ColumnName="hanlder" />
+          <ScalarProperty Name="nexthanlder" ColumnName="nexthanlder" />
+          <ScalarProperty Name="lasthanlder" ColumnName="lasthanlder" />
+          <ScalarProperty Name="state" ColumnName="state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chaosong">
+      <EntityTypeMapping TypeName="ProcessManagerDbModel.Chaosong">
+        <MappingFragment StoreEntitySet="Chaosong">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="steps" ColumnName="steps" />
+          <ScalarProperty Name="hanlder" ColumnName="hanlder" />
+          <ScalarProperty Name="state" ColumnName="state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Huiqian">
+      <EntityTypeMapping TypeName="ProcessManagerDbModel.Huiqian">
+        <MappingFragment StoreEntitySet="Huiqian">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="steps" ColumnName="steps" />
+          <ScalarProperty Name="hanlder" ColumnName="hanlder" />
+          <ScalarProperty Name="state" ColumnName="state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pizhu">
+      <EntityTypeMapping TypeName="ProcessManagerDbModel.Pizhu">
+        <MappingFragment StoreEntitySet="Pizhu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="steps" ColumnName="steps" />
+          <ScalarProperty Name="hanlder" ColumnName="hanlder" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Predefine">
+      <EntityTypeMapping TypeName="ProcessManagerDbModel.Predefine">
+        <MappingFragment StoreEntitySet="Predefine">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="bid" ColumnName="bid" />
+          <ScalarProperty Name="steps" ColumnName="steps" />
+          <ScalarProperty Name="hanlder" ColumnName="hanlder" />
+          <ScalarProperty Name="nexthanlder" ColumnName="nexthanlder" />
+          <ScalarProperty Name="lasthanlder" ColumnName="lasthanlder" />
+          <ScalarProperty Name="state" ColumnName="state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Process">
+      <EntityTypeMapping TypeName="ProcessManagerDbModel.Process">
+        <MappingFragment StoreEntitySet="Process">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="bid" ColumnName="bid" />
+          <ScalarProperty Name="steps" ColumnName="steps" />
+          <ScalarProperty Name="hanlder" ColumnName="hanlder" />
+          <ScalarProperty Name="nexthanlder" ColumnName="nexthanlder" />
+          <ScalarProperty Name="lasthanlder" ColumnName="lasthanlder" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="detial" ColumnName="detial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

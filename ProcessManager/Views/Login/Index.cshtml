@@ -1,0 +1,60 @@
+﻿@using ProcessManager.Models
+@model ProcessUserModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TECHSEM | 登入</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="middle-box text-center loginscreen  animated fadeInDown">
+        <div>
+            <div>
+
+                <h1 class="logo-name">OA+</h1>
+
+            </div>
+            <h3>欢迎进入流程管理系统</h3>
+            <p>
+                流程管理系统用于创建和处理工作流程
+            </p>
+            <p>登入</p>
+            <form class="m-t" role="form" method="post">
+                @Html.ValidationSummary(true,"",new { @class="text-danger"})
+                <div class="form-group">
+                    @Html.TextBoxFor(m=>m.user,new { @class="form-control",placeholder="用户名",required=""})
+                    @Html.ValidationMessageFor(m=>m.user,"",new { @class="text-danger"})
+                </div>
+                <div class="form-group">
+                    @Html.PasswordFor(m=>m.password,new { @class="form-control",placeholder="密码",required=""})
+                    @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">登入</button>
+
+                <a href="#"><small>忘记密码?</small></a>
+                
+            </form>
+            <p class="m-t"> <small>shnsg app framework base on Bootstrap 3 &copy; 2015</small> </p>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+

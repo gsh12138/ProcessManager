@@ -1,0 +1,35 @@
+﻿@using ProcessManager.Models
+@model CuLiGuoCheng
+
+<a data-toggle="modal" href="#culi-form" class="btn btn-white btn-xs" data-placement="left" title="Plug this message"><i class="fa fa-plug"></i> 处理</a>
+<div id="culi-form" class="modal fade" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="m-t-none m-b">处理异常</h3>
+                        <form role="form" method="post" action="/YiChangChuLi/cuLiYiChang">
+                            @Html.HiddenFor(m=>m.id)
+                            <div class="form-group"><label>原因分析</label>
+                                @Html.TextAreaFor(m => m.yyfx, new { @class="form-control",
+                                                          rows="8"}) 
+                                
+                            </div>
+                            <div class="form-group"><label>整改结果</label> 
+                                @Html.TextAreaFor(m => m.zgjg, new { @class="form-control",
+                                                          rows="8"}) 
+                                
+                            </div>
+                            <div>
+                                <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>提交</strong></button>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

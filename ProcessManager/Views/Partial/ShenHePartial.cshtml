@@ -1,0 +1,32 @@
+﻿@using ProcessManager.Models
+@model ProcessPiZhu
+
+<div id="modal-form" class="modal fade" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="m-t-none m-b">审核</h3>
+
+                        <p>单据号:@Model.Pid</p>
+                        
+                        <form id="shenhekuang" role="form" method="post">
+                            @Html.HiddenFor(m => m.Pid)
+                            <div class="form-group">
+                                <label>审核意见</label>
+                                @Html.TextAreaFor(m=>m.Detail,new { @class= "form-control",
+                                                                       row=3})
+                            </div>
+                            <div>
+                                <button id="tongyi" class="btn btn-primary"><i class="fa fa-check"></i> 同意</button>
+                                <button id="dahui" class="btn btn-danger"><i class="fa fa-reply"></i> 打回</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

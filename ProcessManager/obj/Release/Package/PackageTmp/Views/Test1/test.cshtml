@@ -1,0 +1,275 @@
+﻿@using ProcessManager.Models
+@using ProcessManager.Helper
+@model KeSuDanModel
+@{
+    ViewBag.Title = "test";
+    Layout = ViewBag.lout;
+    bool readol = false;
+    if (ViewBag.readol != null)
+    {
+        readol = bool.Parse(ViewBag.readol);
+    }
+    
+
+}
+
+@Styles.Render("~/Content/css/datapicker");
+<div class="row" style="margin-top:20px">
+    <form id="dantou" method="post" class="form-inline">
+        @Html.HiddenFor(m => m.fangshi, new { id = "fangshi" })
+        @Html.HiddenFor(m=>m.bid)
+        <div class="container">
+            <div class="form-group col-md-7" style="margin-bottom: 10px">
+                <label>客户编号:</label>
+
+
+                @Html.TextBoxFor(m => m.khbh, MyReadOnlyHelper.hasReadonly("form-control", readol))
+
+            </div>
+            <div class="form-group col-md-7" style="margin-bottom: 10px">
+                <label>填报日期:</label>
+                <div class="input-group">
+                    @Html.TextBoxFor(m => m.tbrq, new { @class = "form-control datapic", @readonly = "readonly" })
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container"><button class="btn btn-primary tj">添加产品信息</button></div>
+        <div class="container" style="box-shadow: 0 0 4px;margin-top: 20px;border-radius: 5px">
+            <div id="chanpin">
+                <input type="hidden" class="cph" value="1" />
+                @{
+                    if (Model != null)
+                    {
+                        int i = 1;
+                        string cp = "cp";
+                        foreach (CanPinModel can in Model.canpin)
+                        {
+                            <div id="@cp@i" class="cp" style="padding: 10px;">
+                                <div>
+                                    <div class="form-group">
+                                        <label for="exampleInputName2">订单号:</label>
+                                        @Html.TextBox("dingdanhao",can.dingdanid, MyReadOnlyHelper.hasReadonly("form-control", readol))
+                                        @*<input readonly type="text" value="@can.dingdanid" class="form-control" name="dingdanhao" placeholder="">*@
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">数量:</label>
+                                        <input data-zsl="@can.shuliang" type="number" value="@can.shuliang" class="form-control" name="shuliang" style="width: 70px" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputName2">原因:</label>
+                                        <input type="text" value="@can.yuanying" style="width: 470px" name="yuanying" class="form-control" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+
+                                        @Html.DropDownList("tuiorhuan", new SelectList(new List<string> { "退货", "换货" }, can.tuiorhuan), new { @class = "form-control" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.DropDownList("wenti", new SelectList(new List<string> { "商务问题", "质量问题" }, can.wenti), new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+                            i += 1;
+                        }
+                    }
+                    else
+                    {
+                        <div id="cp1" class="cp" style="padding: 10px;">
+                            <div>
+                                <div class="form-group">
+                                    <label for="exampleInputName2">订单号:</label>
+                                    <input type="text" class="form-control" name="dingdanhao" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">数量:</label>
+                                    <input type="number" class="form-control" name="shuliang" style="width: 70px" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputName2">原因:</label>
+                                    <input type="text" style="width: 470px" name="yuanying" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <select name="tuiorhuan" class="form-control">
+                                        <option selected>退货</option>
+                                        <option>换货</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="wenti" class="form-control">
+                                        <option selected>质量问题</option>
+                                        <option>商务问题</option>
+                                    </select>
+                                </div>
+
+                                <button disabled="disabled" class="btn btn-primary sc">删除</button>
+                            </div>
+                        </div>
+                    }
+                }
+                @*<div id="cp1" class="cp" style="padding: 10px;">
+                    <div>
+                        <div class="form-group">
+                            <label for="exampleInputName2">订单号:</label>
+                            <input type="text" class="form-control" name="dingdanhao" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="">数量:</label>
+                            <input type="number" class="form-control" name="shuliang" style="width: 70px" />
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName2">原因:</label>
+                            <input type="text" style="width: 470px" name="yuanying" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <select name="tuiorhuan" class="form-control">
+                                <option selected>退货</option>
+                                <option>换货</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select name="wenti" class="form-control">
+                                <option selected>质量问题</option>
+                                <option>商务问题</option>
+                            </select>
+                        </div>
+
+                        <button disabled="disabled" class="btn btn-primary sc">删除</button>
+                    </div>
+                </div>*@
+            </div>
+        </div>
+    </form>
+</div>
+
+
+@{
+    if (ViewBag.lout == "~/Views/Test/_Biaodan.cshtml")
+    {
+        @section datapicker{
+            @Scripts.Render("~/bundles/datapicker");
+            <script>
+                $('.datapic').datetimepicker({
+                    format: 'yyyy-mm-dd',
+                    autoclose: true,
+                    minView: 2,
+                    language: 'zh-CN'
+                });
+                $('button.tj').on('click', function () {
+                    let cp = zj();
+                    cp.appendTo($('#chanpin'));
+                    return false;
+                });
+                function sc(h) {
+                    $('#cp' + h).remove();
+                }
+                function zj() {
+                    let h = parseInt($('.cph').val()) + 1;
+                    $('.cph').val(h);
+                    let cp = $('#cp1').clone().removeClass('cp');
+                    cp.find('input').each(function () {
+                        $(this).val('');
+                    });
+
+                    cp.attr('id', 'cp' + h);
+                    cp.find('button').attr('onclick', 'sc(' + h + ')').removeAttr('disabled');
+                    return cp;
+                }
+
+                
+
+                $('#tj').on('click', function () {
+                    $('#fangshi').val('tijiao');
+                    $('#dantou').submit();
+
+                });
+                $('#bc').on('click', function () {
+                    $('#fangshi').val('baocun');
+                    $('#dantou').submit();
+
+                });
+                
+            </script>
+
+
+        }
+    }else if(ViewBag.lout== "_XiaYiBu.cshtml"||ViewBag.lout== "_JueDing.cshtml")
+    {
+        @section datapicker{
+            <script>
+                $('input[type="number"]').on('change', function () {
+                    if ($(this).val() == 0 || (parseInt($(this).val()) >parseInt($(this).attr('data-zsl')))) {
+                        $(this).val($(this).attr('data-zsl'));
+                    }
+                    if ($(this).val() != 0 && parseInt($(this).val()) <parseInt($(this).attr('data-zsl'))) {
+                        let cp = $(this).parents('.cp').clone();
+                        cp.find('input[type="number"]').val($(this).attr('data-zsl') - $(this).val())
+                        .attr('data-zsl', $(this).attr('data-zsl') - $(this).val());
+                        $(this).attr('data-zsl', $(this).val());
+                        cp.appendTo('#chanpin');
+                    }
+                });
+                $('button.tj').remove();
+                $('#xyb').on('click', function () {
+                    $('#dantou').attr('action', '/Test1/cuLi');
+                    $('#fangshi').val('xiayibu');
+                    $('#dantou').submit();
+                });
+                $('#gb').on('click', function () {
+                    $('#dantou').attr('action', '/Test1/cuLi');
+                    $('#fangshi').val('guanbi');
+                    $('#dantou').submit();
+                });
+                $('#fq').on('click', function () {
+                    $('#dantou').attr('action', '/Test1/cuLi');
+                    $('#fangshi').val('faqijueyi');
+                    $('#dantou').submit();
+                });
+            </script>
+        }
+
+
+    }else if(ViewBag.lout== "~/Views/Shared/_Layout.cshtml")
+    {
+        @section scripts{
+        <script>
+            $('#chanpin').find('input').each(function () {
+                $(this).attr('readonly', 'readonly');
+            });
+            $('#chanpin').find('input[number]').each(function () {
+                $(this).attr('readonly', 'readonly');
+
+            });
+            $('#chanpin').find('select').each(function () {
+                $(this).attr('disabled', 'disabled');
+
+            });
+            $('button.tj').attr('disabled', 'disabled').unbind('onclick');
+        </script>
+            }
+    }else if(ViewBag.lout == "~/Views/Test/_Testqiantao.cshtml")
+    {
+        @section datapicker{
+            <script>
+            $('#chanpin').find('input').each(function () {
+                $(this).attr('readonly', 'readonly');
+            });
+            $('#chanpin').find('input[number]').each(function () {
+                $(this).attr('readonly', 'readonly');
+
+            });
+            $('#chanpin').find('select').each(function () {
+                $(this).attr('disabled', 'disabled');
+
+            });
+            $('button.tj').attr('disabled', 'disabled').unbind('onclick');
+</script>
+            }
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+﻿@using ProcessManager.Models
+@model ListBiaoListModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row" style="background-color:ivory;margin-top:10px">
+
+    @{
+        foreach (BiaoListModel m in Model.list)
+        {
+            <div class="col-sm-6 col-md-3">
+                <div class="thumbnail"  style="box-shadow:0 0 5px">
+                    <div class="caption">
+                        <h3>@m.name</h3>
+                        <p style="height:100px">@m.detil</p>
+                        <p><a href="@m.url/1" class="btn btn-primary" role="button">发起</a> <a href="/liucheng/@m.pid" class="btn btn-default" role="button">查看流程</a></p>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+</div>
+
+

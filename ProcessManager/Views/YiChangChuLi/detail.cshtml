@@ -1,0 +1,210 @@
+﻿@using ProcessManager.Models
+@model YiChangCuLiModel
+
+@{
+    Layout = "~/Views/Shared/_Layout_3.cshtml";
+    ViewBag.Title = "异常详细信息";
+    
+
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>异常详细信息</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a>异常处理</a>
+            </li>
+            <li class="active">
+                <strong>异常详细信息</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+<div class="fh-breadcrumb">
+
+    <div class="fh-column">
+        <div class="full-height-scroll">
+            <ul class="list-group elements-list">
+                <li class="list-group-item active">
+                    <a data-toggle="tab" href="#yichangdetail">
+                        <small class="pull-right text-muted"> @Model.yichang.tbrq</small>
+                        <strong>填报人:@Model.yichang.tbr</strong>
+                        <div class="small m-t-xs">
+                            <p class="m-b-xs">
+                                @Model.yichang.zt
+                                <br />
+                            </p>
+                            <p class="m-b-none">
+
+                                <span class="label pull-right label-primary">异常内容</span>
+                                <i class="fa fa-map-marker"></i> difydfdify
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                @foreach (CuLiGuoCheng culi in Model.chuliguocheng) {
+                    <li class="list-group-item">
+                        <a data-toggle="tab" href="#tab-@culi.jishu">
+                            <small class="pull-right text-muted"> @culi.culitime</small>
+                            <strong>处理人:@culi.culiren</strong>
+                            <div class="small m-t-xs">
+                                <p class="m-b-xs">
+                                    @culi.yyfx
+                                    <br />
+                                </p>
+                                <p class="m-b-none">
+
+                                    <span class="label pull-right label-primary">@culi.leixing</span>
+                                    <i class="fa fa-map-marker"></i> @culi.flag
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                }
+
+
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="full-height">
+        <div class="full-height-scroll white-bg border-left">
+
+            <div class="element-detail-box">
+
+                <div class="tab-content">
+                    <div id="yichangdetail" class="tab-pane active">
+                        @if (Model.yichang.state == YiChangState.未处理) {
+                            <div class="pull-right">
+                                <div class="tooltip-demo">
+                                    @Html.Partial("CuLiYiChang", new CuLiGuoCheng(Model.yichang.id))
+                                    <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="top" title="Mark as read"><i class="fa fa-eye"></i> 不予处理</button>
+                                    <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as important"><i class="fa fa-exclamation"></i> 指定处理人</button>
+                                </div>
+                            </div>
+                        }
+                        
+                        <div class="small text-muted">
+                            <i class="fa fa-clock-o"></i> @Model.yichang.tbrq
+                        </div>
+
+                        <h1>
+                            @Model.yichang.zt
+                        </h1>
+
+                        <p>
+                            异常出现日期:@Model.yichang.cxrq
+                        </p>
+                        <p>
+                            填报部门:@Model.yichang.tbbm  
+                        </p>
+                        <p>
+                            填报人:@Model.yichang.tbr
+                        </p>
+                        <p>
+                            异常分类:@Model.yichang.ycfl
+                        </p>
+
+                        <p>
+                            <strong>异常描述</strong>
+                        </p>
+                        <p>
+                            @Model.yichang.ycms
+                        </p>
+                        
+
+                        
+
+                    </div>
+
+                    @foreach (CuLiGuoCheng culi in Model.chuliguocheng) {
+                        
+                        if (culi.leixing == CuLiLeiXing.处理异常.ToString()) {
+                            <div id="tab-@culi.jishu" class="tab-pane">
+                                @if (culi.jishu == 0) {
+                                    <div class="pull-right">
+                                        <div class="tooltip-demo">
+                                            <a data-toggle="modal" href="#culi-form" class="btn btn-white btn-xs" data-placement="left" title="Plug this message"><i class="fa fa-plug"></i> 关闭</a>
+                                            @Html.Partial("FanKuiYiChang", new CuLiGuoCheng(Model.yichang.id))
+                                            <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as important"><i class="fa fa-exclamation"></i> 待验证</button>
+                                        </div>
+                                    </div>
+                                }
+                                
+                                <div class="small text-muted">
+                                    <i class="fa fa-clock-o"></i> @culi.culitime
+                                </div>
+
+                                <h1>
+                                    @Model.yichang.zt
+                                </h1>
+
+                                <p>
+                                    <strong>原因分析</strong>
+                                </p>
+                                <p>
+                                    @culi.yyfx
+                                </p>
+
+                                <p>
+                                    <strong>整改结果</strong>
+                                </p>
+                                <p>
+                                    @culi.zgjg
+                                </p>
+                            </div>
+                        } else if (culi.leixing == CuLiLeiXing.反馈异常.ToString()) {
+                            <div id="tab-@culi.jishu" class="tab-pane">
+                                @if (culi.jishu == 0) {
+                                    <div class="pull-right">
+                                        <div class="tooltip-demo">
+                                            @Html.Partial("CuLiYiChang", new CuLiGuoCheng(Model.yichang.id))
+                                            <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="top" title="Mark as read"><i class="fa fa-eye"></i> 不予处理</button>
+                                            <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as important"><i class="fa fa-exclamation"></i> 指定处理人</button>
+
+
+                                        </div>
+                                    </div>
+                                }
+                                
+                                <div class="small text-muted">
+                                    <i class="fa fa-clock-o"></i> @culi.culitime
+                                </div>
+
+                                <h1>
+                                    @Model.yichang.zt
+                                </h1>
+
+                                <p>
+                                    <strong>效果确认</strong>
+                                </p>
+                                <p>
+                                    @culi.xgqr
+                                </p>
+
+                                
+                            </div>
+                        }
+
+                    }
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+

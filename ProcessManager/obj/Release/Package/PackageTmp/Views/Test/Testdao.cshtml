@@ -1,0 +1,119 @@
+﻿@using ProcessManager.Helper
+@using ProcessManager.Models
+@model QingJiaDanModel
+@{
+    ViewBag.Title = "Testdao";
+    Layout = ViewBag.lout;
+    bool readol = false;
+    if (ViewBag.readol != null)
+    {
+        readol = bool.Parse(ViewBag.readol);
+    }
+    if (Model == null)
+    {
+        ViewBag.tianshu = 0;
+
+    }
+    else
+    {
+        ViewBag.tianshu = Model.tianshu;
+    }
+}
+@Styles.Render("~/Content/css/datapicker");
+
+<form class="form-horizontal" method="post" action="/Test/Testdao">
+    @Html.HiddenFor(m=>m.fangshi,new { id="fangshi"})
+    @Html.HiddenFor(m=>m.bid)
+    <div class="form-group">
+        <label class="col-sm-2 control-label">请假类别:</label>
+        
+        <div class="col-sm-3">
+            <label class="radio-inline">
+                @Html.RadioButtonFor(m => m.leixing, "事假", MyReadOnlyHelper.hasDisable("", readol)) 事假
+            </label>
+            <label class="radio-inline">
+                @Html.RadioButtonFor(m => m.leixing, "病假", MyReadOnlyHelper.hasDisable("", readol)) 病假
+            </label>
+            <label class="radio-inline">
+                @Html.RadioButtonFor(m => m.leixing, "婚假", MyReadOnlyHelper.hasDisable("", readol)) 婚假
+            </label>
+            <label class="radio-inline">
+                @Html.RadioButtonFor(m => m.leixing, "其他", MyReadOnlyHelper.hasDisable("", readol)) 其他
+                @*<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">*@
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">申请请假时间:</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                @Html.TextBoxFor(m => m.startime, new { @class="form-control datapic",@readonly="readonly",value=DateTime.Today})
+                @*<input type="text" readonly value="2017-03-22" class="form-control datapic">*@
+                <span class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></span>
+            </div>
+        </div>
+        <div class="col-sm-1" style="text-align: center">
+            <h4>至</h4>
+        </div>
+        <div class="col-sm-2">
+            <div class="input-group">
+                @Html.TextBoxFor(m => m.finishtime, new { @class = "form-control datapic", @readonly = "readonly", value = DateTime.Today })
+                @*<input type="text" readonly value="2017-03-22" class="form-control datapic">*@
+                <span class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></span>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <label class="control-label" for="" id="ts">@ViewBag.tianshu 天</label>
+            
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">请假缘由:</label>
+        
+        <div class="col-sm-8">
+            @Html.TextAreaFor(m=>m.detil,5,0,MyReadOnlyHelper.hasReadonly("form-control",readol))
+        </div>
+    </div>
+    
+</form>
+
+
+@if(ViewBag.lout== "~/Views/Test/_Biaodan.cshtml") {
+    @section datapicker{
+    @Scripts.Render("~/bundles/datapicker");
+    <script>
+    $('.datapic').datetimepicker({
+            format: 'yyyy-mm-dd',
+            autoclose: true,
+            minView: 2,
+            language: 'zh-CN'
+    }).on('changeDate', function (ev) {
+        if (Date.parse($('#startime').val()) > Date.parse($('#finishtime').val())) {
+            $('#ts').html('开始日期大于结束日期').addClass('text-danger');
+        } else {
+            var star = new Date(Date.parse($('#startime').val()));
+            var finish = new Date(Date.parse($('#finishtime').val()));
+            var tt = (Math.abs(finish - star)) / (1000 * 60 * 60 * 24);
+            $('#ts').html(tt + '天').removeClass('text-danger');
+        }
+    });
+    $('#tj').on('click', function () {
+        $('#fangshi').val('tijiao');
+        $('form').submit();
+    });
+    $('#bc').on('click', function () {
+        $('#fangshi').val('baocun');
+        $('form').submit();
+    });
+    </script>
+    }
+
+}
+
+
+
+
+
+
+

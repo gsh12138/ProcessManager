@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProcessManagerDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Basice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="pid" Type="int" />
+    <Property Name="bid" Type="int" />
+    <Property Name="steps" Type="int" />
+    <Property Name="hanlder" Type="varchar" MaxLength="20" />
+    <Property Name="nexthanlder" Type="varchar" MaxLength="20" />
+    <Property Name="lasthanlder" Type="varchar" MaxLength="20" />
+    <Property Name="state" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Chaosong">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="pid" Type="int" />
+    <Property Name="steps" Type="int" />
+    <Property Name="hanlder" Type="varchar" MaxLength="20" />
+    <Property Name="state" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Huiqian">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="pid" Type="int" />
+    <Property Name="steps" Type="int" />
+    <Property Name="hanlder" Type="varchar" MaxLength="20" />
+    <Property Name="state" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Pizhu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="pid" Type="int" />
+    <Property Name="steps" Type="int" />
+    <Property Name="hanlder" Type="varchar" MaxLength="20" />
+    <Property Name="detail" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Predefine">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="pid" Type="int" />
+    <Property Name="bid" Type="int" />
+    <Property Name="steps" Type="int" />
+    <Property Name="hanlder" Type="varchar" MaxLength="20" />
+    <Property Name="nexthanlder" Type="varchar" MaxLength="20" />
+    <Property Name="lasthanlder" Type="varchar" MaxLength="20" />
+    <Property Name="state" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Process">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="pid" Type="int" />
+    <Property Name="bid" Type="int" />
+    <Property Name="steps" Type="int" />
+    <Property Name="hanlder" Type="varchar" MaxLength="20" />
+    <Property Name="nexthanlder" Type="varchar" MaxLength="20" />
+    <Property Name="lasthanlder" Type="varchar" MaxLength="20" />
+    <Property Name="state" Type="varchar" MaxLength="10" />
+    <Property Name="detial" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityContainer Name="ProcessManagerDbModelStoreContainer">
+    <EntitySet Name="Basice" EntityType="Self.Basice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chaosong" EntityType="Self.Chaosong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Huiqian" EntityType="Self.Huiqian" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pizhu" EntityType="Self.Pizhu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Predefine" EntityType="Self.Predefine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Process" EntityType="Self.Process" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
