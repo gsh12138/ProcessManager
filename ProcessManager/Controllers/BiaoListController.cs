@@ -11,7 +11,7 @@ namespace ProcessManager.Controllers
     {
         // GET: BiaoList
         [UserFilter]
-        public ActionResult Index()
+        public ActionResult Index() 
         {
             if (Session["user"] != null)
             {
